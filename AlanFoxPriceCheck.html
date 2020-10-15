@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Will Chris be willing to purchase your item?</h2>
+
+<p id="UsefullData"></p>
+
+<button type="button" onclick= "testfunction()"> Collect Information</button>
+
+</br>
+</br>
+</br>
+
+<h2> Current price of Alan Fox's BNC Passthrough </h2>
+<p id="BNCPrice">
+<script>
+
+var SetTimer = setInterval(myTimer, 75);
+var CurrentBNCPrice = 50;
+function myTimer() {
+  CurrentBNCPrice = CurrentBNCPrice + .04276;
+  document.getElementById("BNCPrice").innerHTML = ("$ " + CurrentBNCPrice.toString());
+}
+
+</script>
+
+</p>
+</body>
+</html>
+
+
+<script>
+function testfunction()
+{
+	var price = prompt("What is the asking price?");
+	var overpriced = confirm("Have you overpriced this item?  Press OK for no, Cencel for yes")
+	var SellerName = prompt("Please write your first and last name below")
+
+	if (overpriced == false && SellerName != "Alan Fox" || SellerName != "alan fox")
+	{
+	   document.getElementById("UsefullData").innerHTML = ("Thank you " + SellerName + " Chris will be happy to purchase your item for $" + price);
+	}
+
+	if (overpriced == false )
+	{
+	    document.getElementById("UsefullData").innerHTML = ("I am sorry " + SellerName + " But Chris does not buy overpriced items.");
+	}
+
+	if (SellerName == "Alan Fox" || SellerName == "alan fox")
+	{
+	   document.getElementById("UsefullData").innerHTML = ("Sorry, Chris does not buy overpriced items from Alan Fox");
+	}
+
+}
+</script>
+
